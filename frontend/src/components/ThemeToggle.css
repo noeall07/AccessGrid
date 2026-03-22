@@ -1,0 +1,69 @@
+.theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--text-muted);
+}
+
+.toggle-track {
+    width: 56px;
+    height: 28px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-icons {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7px;
+}
+
+.toggle-icons svg {
+    width: 14px;
+    height: 14px;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+.sun-icon {
+    opacity: 0.4;
+}
+
+.moon-icon {
+    opacity: 0.4;
+}
+
+[data-theme="light"] .sun-icon {
+    opacity: 1;
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .moon-icon {
+    opacity: 1;
+    color: var(--text-primary);
+}
+
+.toggle-thumb {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: var(--accent);
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    top: 3px;
+    left: 3px;
+}
+
+.toggle-thumb.dark {
+    transform: translateX(28px);
+}

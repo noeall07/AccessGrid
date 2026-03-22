@@ -1,0 +1,196 @@
+.parking-zones {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.parking-zones.compact {
+    gap: 16px;
+}
+
+.parking-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+}
+
+.summary-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.summary-value {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.summary-label {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.summary-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--border-color);
+}
+
+.zones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.parking-zones.compact .zones-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.zone-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+
+.zone-card:hover {
+    border-color: var(--text-muted);
+}
+
+.zone-card.highlight {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.3);
+}
+
+.zone-card.restricted {
+    opacity: 0.6;
+}
+
+.zone-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.zone-id {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+}
+
+.zone-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.zone-name {
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.zone-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.your-zone-badge {
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 4px 8px;
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border-radius: 4px;
+}
+
+.restricted-badge {
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 4px 8px;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border-radius: 4px;
+}
+
+.zone-stats {
+    margin-bottom: 12px;
+}
+
+.zone-progress {
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.zone-progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.zone-numbers {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+.zone-numbers .occupied {
+    color: var(--text-secondary);
+}
+
+.zone-numbers .available {
+    color: var(--success);
+    font-weight: 500;
+}
+
+.zone-capacity {
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+}
+
+.capacity-text {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+}
+
+.capacity-text strong {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .zones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .parking-summary {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .summary-divider {
+        width: 60px;
+        height: 1px;
+    }
+}

@@ -1,0 +1,195 @@
+.vehicle-table-wrapper {
+    overflow-x: auto;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.vehicle-table-wrapper.expanded {
+    max-height: none;
+}
+
+.vehicle-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vehicle-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.vehicle-table td {
+    padding: 14px 16px;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+}
+
+.vehicle-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.vehicle-table tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+.plate-cell code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+}
+
+.time-cell {
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+}
+
+.dept-cell {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.status-badge.inside {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.status-badge.exited {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+}
+
+.status-badge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.status-badge.active {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.status-badge.inactive {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+}
+
+.type-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.type-badge.staff {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+.type-badge.hod {
+    background: #6366f1;
+    color: white;
+}
+
+.type-badge.principal {
+    background: #8b5cf6;
+    color: white;
+}
+
+.type-badge.student {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.type-badge.taxi {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--warning);
+}
+
+.type-badge.bus {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--success);
+}
+
+.type-badge.visitor {
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+}
+
+.type-badge.unknown {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+}
+
+.verified-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.verified-badge.yes {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+}
+
+.verified-badge.no {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: var(--bg-secondary);
+    border-color: var(--text-muted);
+}
+
+.action-btn svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text-secondary);
+}
