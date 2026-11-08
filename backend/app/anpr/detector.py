@@ -2,6 +2,7 @@ import cv2
 import pytesseract
 from ultralytics import YOLO
 import re
+from pathlib import Path
 
 MODEL_PATH = Path(__file__).resolve().parent / "best.pt"
 
