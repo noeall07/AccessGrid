@@ -6,6 +6,7 @@ bp = Blueprint('auth', __name__)
 
 @bp.route('/login', methods=['POST'])
 def login():
+    print("Login attempt")
     data = request.get_json()
     if not data or not 'username' in data or not 'password' in data:
         return jsonify({'error': 'Invalid request'}), 400

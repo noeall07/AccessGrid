@@ -7,6 +7,7 @@ import ActivityFeed from './ActivityFeed'
 import ParkingZones from './ParkingZones'
 import './Dashboard.css'
 import { detectPlate } from '../api/api';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 
 
@@ -32,6 +33,26 @@ const SecurityDashboard = ({ user, onLogout, theme, toggleTheme }) => {
     useEffect(() => {
         fetchData()
     }, [])
+
+    const handleCameraCapture = async () => {
+        try {
+            const image = await Camera.getPhoto({
+                quality: 70,
+                allowEditing: false,
+                resultType: CameraResultType.Uri
+            });
+
+            const response = await fetch(image.webPath);
+            const blob = await response.blob();
+
+            const plate = await detectPlate(blob);
+            setScannedPlate(plate);
+            handleScan();
+
+        } catch (error) {
+            console.error("Camera error:", error);
+        }
+    };
 
     const fetchData = async () => {
         try {
@@ -209,6 +230,9 @@ const SecurityDashboard = ({ user, onLogout, theme, toggleTheme }) => {
                                     </div>
                                 </div>
                                 <div className="scanner-controls">
+                                    <button className="scan-action-btn" onClick={handleCameraCapture}>
+                                        📸 Scan via Camera
+                                    </button>
                                     <h3>Manual Entry</h3>
                                     <div className="scan-input-group">
                                         <input

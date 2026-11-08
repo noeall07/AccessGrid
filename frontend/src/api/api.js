@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+const BASE_URL = 'http://localhost:5000/api';
 const API = axios.create({
-  baseURL: 'http://172.20.10.4:5000/api',
+  baseURL: BASE_URL,
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -51,7 +52,7 @@ export const detectPlate = async (file) => {
   const formData = new FormData();
   formData.append("image", file);
 
-  const response = await axios.post("http://172.20.10.4:5000/api/anpr",
+  const response = await axios.post(`${BASE_URL}/anpr`,
     formData,
     {
       headers: { 'Content-Type': 'multipart/form-data' },

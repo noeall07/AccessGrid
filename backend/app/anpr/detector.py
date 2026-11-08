@@ -5,7 +5,7 @@ import re
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-model = YOLO(r"C:\VSC PROJECTS\REACT\ACCESSGRIDNEW\backend\app\anpr\best.pt")
+model = YOLO(r"C:\VSC PROJECTS\miniproj\ACCESSGRIDNEW\backend\app\anpr\best.pt")
 
 def clean_plate(text):
     text = text.upper()

@@ -10,21 +10,31 @@ const Login = ({ onLogin, theme, toggleTheme }) => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        setError('')
-        setIsLoading(true)
+   const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError('')
+    setIsLoading(true)
 
-        try {
-            const response = await login(username, password)
-            onLogin(response.data)
-        } catch (err) {
-            const message = err.response?.data?.error || 'Login failed. Please try again.'
-            setError(message)
-        } finally {
-            setIsLoading(false)
-        }
+    try {
+        console.log("Trying login...");
+
+        const response = await login(username, password)
+
+        console.log("Login success:", response.data);
+
+        onLogin(response.data)
+
+    } catch (err) {
+        console.log("FULL ERROR:", err);
+        console.log("RESPONSE:", err.response);
+        console.log("MESSAGE:", err.message);
+
+        const message = err.response?.data?.error || err.message
+        setError(message)
+    } finally {
+        setIsLoading(false)
     }
+}
 
     return (
         <div className="login-container">

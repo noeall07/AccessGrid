@@ -62,7 +62,7 @@ def detect_plate(image_path):
     cv2.imshow("Gray",gray)
     cv2.imshow("Threshold", thresh)
     cv2.waitKey(1)
-detect_plate(r"C:\VSC PROJECTS\REACT\ACCESSGRIDNEW\anpr\dataset\test\images\Cars101_png.rf.8a5ecd723af96ddac8c71bf15f70146a.jpg")
+detect_plate(r"C:\VSC PROJECTS\miniproj\ACCESSGRIDNEW\anpr\dataset\test\images\luaw2gghbr9a1_jpg.rf.966c1796394ee6beb4e855d7bb728804.jpg")
 
 
 
