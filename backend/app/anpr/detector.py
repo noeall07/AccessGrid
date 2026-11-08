@@ -3,9 +3,9 @@ import pytesseract
 from ultralytics import YOLO
 import re
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+MODEL_PATH = Path(__file__).resolve().parent / "best.pt"
 
-model = YOLO(r"C:\VSC PROJECTS\miniproj\ACCESSGRIDNEW\backend\app\anpr\best.pt")
+model = YOLO(str(MODEL_PATH))
 
 def clean_plate(text):
     text = text.upper()
@@ -62,8 +62,4 @@ def detect_plate(image):
     text = pytesseract.image_to_string(thresh, config='--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
     text = clean_plate(text)
     print("License Plate:", text)
-    cv2.imshow("Plate",plate)
-    cv2.imshow("Gray",gray)
-    cv2.imshow("Threshold", thresh)
-    cv2.waitKey(1)
     return text
